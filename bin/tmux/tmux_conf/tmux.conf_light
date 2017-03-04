@@ -1,0 +1,61 @@
+# Tmux configuration file
+# may cause irreparable system damage, please back up first
+
+########################
+# PRETTY COLORS AND SHIT
+########################
+
+# Clock
+set -g clock-mode-colour 				colour255
+
+# Panes
+set -g pane-border-fg 					colour238
+set -g pane-border-fg 					colour242
+set -g pane-active-border-fg			colour252
+
+set -g window-style 'bg=colour236, fg=colour255'
+
+##############
+# STATUS BAR #
+##############
+
+# Line colors
+set -g status-justify 					left
+set -g status-bg 						colour243
+set -g status-fg						colour232
+set -g status-interval 					1
+
+# Messages
+set -g message-fg 						colour233
+set -g message-bg						colour242
+
+# Window mode
+setw -g mode-bg							colour06
+
+# Info on left
+set -g status-left						''
+
+# Statusbar
+set -g status-position bottom
+#set -g status-bg colour234
+#set -g status-fg colour137
+set -g status-attr dim
+set -g status-left ''
+# Assuming this configuration will be changed by 2099
+set -g status-right '#[fg=colour233,bg=colour242,bold] %d/%m/%y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right-length 50
+set -g status-left-length 20
+
+# setw -g window-status-current-fg colour81
+# setw -g window-status-current-bg colour238
+# setw -g window-status-current-attr bold
+setw -g window-status-current-format 	"#[fg=colour000]#[bg=colour251] #I #W "
+
+# setw -g window-status-fg colour138
+# setw -g window-status-bg colour235
+# setw -g window-status-attr none
+setw -g window-status-format 			"#[fg=colour000]#[bg=colour245] #I #W "
+
+setw -g window-status-bell-attr bold
+setw -g window-status-bell-fg colour255
+setw -g window-status-bell-bg colour1

@@ -1,0 +1,61 @@
+" colors
+set t_Co=256
+
+syntax enable 
+
+" set spell 
+" I have no idea why
+
+set relativenumber
+set number
+
+set smartindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set wrap
+
+set ttyfast
+
+if has("autocmd")
+	filetype on
+	filetype plugin on
+	set omnifunc=syntaxcomplete#Complete
+	filetype indent on
+endif
+
+set ruler
+
+try
+	set guifont=Menlo:h15
+catch
+
+endtry
+
+" try
+" 	colorscheme desert
+" catch
+" endtry
+
+set splitbelow
+set splitright
+
+" enable the mouse
+set ttyfast
+set mouse=a
+
+" COLORS N SHIT
+"
+"
+" background
+hi normal cterm=NONE ctermbg=236 ctermfg=255
+
+" Completion menu
+hi Pmenu ctermbg=238
+
+" cursor line highlight
+set cursorcolumn
+hi cursorcolumn cterm=NONE ctermbg=238
+set cursorline
+hi cursorline cterm=NONE ctermbg=238
+

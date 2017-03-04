@@ -1,0 +1,22 @@
+# basic bashrc stuff
+
+# the standard "if not running interactively" spiel
+case $- in
+	*i*);;
+	*) return;;
+esac
+
+# uname for the paranoid
+umask 077
+
+# history settings
+# append to history instead of truncating
+shopt -s histappend
+# unlimited bash history
+HISTSIZE=-1
+HISTFILESIZE=-1
+# history control
+HISTCONTROL='ignoreboth'
+
+# expand path to include ~/bin
+export PATH="~/bin:$PATH"

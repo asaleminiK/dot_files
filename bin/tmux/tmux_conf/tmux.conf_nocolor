@@ -1,0 +1,27 @@
+# Tmux configuration file
+# may cause irreparable system damage, please back up first
+
+# change prefix from Ctrl-b to Ctrl-a
+set -g prefix C-a
+unbind C-b
+
+# Split with current directory
+bind '"' split-window -c "#{pane_current_path}"
+bind '%' split-window -h -c "#{pane_current_path}"
+
+# forwards CTRL-a when hit twice
+bind C-a send-prefix
+
+# reload source-file with prefix-R
+bind R source-file ~/.tmux.conf
+
+# disable automatic renaming
+set-option -g allow-rename off
+
+# vim keys for shit
+set mode-keys vi
+set-window-option -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R

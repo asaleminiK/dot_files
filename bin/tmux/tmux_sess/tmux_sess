@@ -1,0 +1,49 @@
+#!/bin/bash
+
+NAME="p_tmuxsess"
+CONFIGDIR='~'
+WORKDIR='~'
+FUNDIR='~'
+
+
+# options:
+# edgy_dark
+# normie_light
+export THEME="edgy_dark"
+
+source ~/.DIR_NAMES
+
+if [ -z $CSDIR ]; then
+	CSDIR="$p_WORKDIR"
+fi
+
+if ! tmux has-session -t $NAME &>/dev/null; then
+	tmux new-session -s $NAME -n "Main" -d
+	tmux send-keys -t $NAME:0 "cd ~" C-m
+
+	tmux new-window -n "Conf" -t $NAME
+	tmux send-keys -t $NAME:1 "cd $p_CONFIGDIR" C-m
+
+	tmux new-window -n "Work" -t $NAME
+	tmux send-keys -t $NAME:2 "cd $p_WORKDIR" C-m
+
+	tmux new-window -n "CS" -t $NAME
+	tmux send-keys -t $NAME:3 "cd $p_CSDIR" C-m
+
+	tmux new-window -n "Fun" -t $NAME
+	tmux send-keys -t $NAME:4 "cd $p_FUNDIR" C-m
+
+	if [ -n $p_TMPDIR ]; then
+		tmux new-window -n "scratchpad" -t $NAME
+		tmux send-keys -t $NAME:5 "cd $p_TMPDIR" C-m
+	fi
+
+	tmux new-window -n "cmus" -t $NAME
+	tmux send-keys -t $NAME:6 "cmus" C-m
+
+#	tmux new-window -n "IRC" -t $NAME 
+
+	tmux select-window -t $NAME:0
+fi
+
+tmux attach -t $NAME

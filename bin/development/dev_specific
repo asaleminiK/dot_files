@@ -1,0 +1,18 @@
+# stuff to do with '''programming'''
+
+# use python 3 for everything
+# requires: python 3
+alias py=python3
+alias pipi=pip3.5
+alias ez_install=easy_install-3.5
+
+
+# Git Shit
+# Requires git
+alias g-pom="git push -u origin master"
+alias g-com="git commit -m"
+alias g-add_all="git add *"
+
+# lisp
+# requires clisp
+alias lisp='clisp'

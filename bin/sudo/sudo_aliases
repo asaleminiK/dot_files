@@ -1,0 +1,8 @@
+# aliases involving sudo
+
+# make sudo work with aliases
+alias sudo='sudo '
+
+alias succ='sudo'
+alias fuck='succ $(history -p !-1)'
+alias lsucc='succ -K'

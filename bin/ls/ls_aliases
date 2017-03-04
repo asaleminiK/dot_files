@@ -1,0 +1,11 @@
+# anti-train countermeasures
+# to the person who keeps installing sl on my system
+# fuck you
+alias sl=ls
+
+# ls -l and stuff
+alias ll='ls -la'
+alias la='ls -a'
+alias lh='ls -lha'
+
+# that's all, folks!

@@ -1,0 +1,22 @@
+# some nice aliases
+
+# source local bashrc file
+alias sbashrc="source ~/.bashrc"
+
+# check the ping
+alias chkping='ping -D -c 3 google.com && echo "Internet is up" || ping -c 3 8.8.8.8 || echo "Internet is down"'
+
+# safe rm
+alias rm='rm -i'
+
+# I love snowmen
+alias snowman='echo ☃'
+
+# idfk
+alias meme_text="sed -e 's/\(.\)/ \1/g'"
+alias snowman='echo ☃'
+
+# git shit
+alias g-pom="git push -u origin master"
+alias g-com="git commit -m"
+alias g-addall="git add *"

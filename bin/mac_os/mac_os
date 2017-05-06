@@ -7,14 +7,11 @@ alias restart_finder="killall Finder && open /System/Library/CoreServices/Finder
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO"
 
-# python3.5
-alias py='python3.5 || python'
-
 # sleep the computer
 alias sleepmac="osascript -e 'tell application \"Finder\" to sleep'"
 
 # bash_completion for mac
-if [ -f $(brew --prefix)/etc/bash_completion ] && [ -z $BREWCOMPLETE ]; then 
-	. $(brew --prefix)/etc/bash_completion 
-	export BREWCOMPLETE='wow'
-fi
+# if [ -f $(brew --prefix)/etc/bash_completion ] && [ -z $BREWCOMPLETE ]; then 
+# 	. $(brew --prefix)/etc/bash_completion 
+# 	export BREWCOMPLETE='wow'
+# fi

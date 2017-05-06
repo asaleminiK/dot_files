@@ -38,7 +38,7 @@ set -g pane-border-fg 					colour238
 set -g pane-border-fg 					colour242
 set -g pane-active-border-fg			colour252
 
-set -g window-style 'bg=colour236, fg=colour255'
+set -g window-style 'bg=colour235, fg=colour254'
 
 ##############
 # STATUS BAR #
@@ -68,7 +68,7 @@ set -g status-attr dim
 set -g status-left ''
 # Assuming this configuration will be changed by 2099
 set -g status-right '#[fg=colour233,bg=colour242,bold] %d/%m/%y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
-set -g status-right-length 50
+set -g status-right-length 80
 set -g status-left-length 20
 
 # setw -g window-status-current-fg colour81
@@ -83,4 +83,4 @@ setw -g window-status-format 			"#[fg=colour000]#[bg=colour245] #I #W "
 
 setw -g window-status-bell-attr bold
 setw -g window-status-bell-fg colour255
-setw -g window-status-bell-bg colour1
+setw -g window-status-bell-bg colour001

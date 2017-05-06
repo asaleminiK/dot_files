@@ -3,8 +3,12 @@ import os
 # options: "dark" or "light"
 COLORSCHEME = "dark"
 
-# tmux shit
+# deal with bash prompt
 
+# deal with vim's bullshit
+
+
+# tmux shit
 name = os.popen("tmux ls | awk -F':' '{print $1}'").read()
 
 lighttheme = {

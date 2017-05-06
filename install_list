@@ -1,0 +1,13 @@
+# list files you want copied onto your system here
+
+bash_functions
+bash_aliases
+bash_prompt
+bashrc
+ls_aliases
+development
+mac_os
+vimrc
+tmux_sess
+tmux_conf
+slate.conf

@@ -3,6 +3,9 @@
 # source local bashrc file
 alias sbashrc="source ~/.bashrc"
 
+# less has color now
+alias less="less -R"
+
 # check the ping
 alias chkping='ping -D -c 3 google.com && echo "Internet is up" || ping -c 3 8.8.8.8 || echo "Internet is down"'
 

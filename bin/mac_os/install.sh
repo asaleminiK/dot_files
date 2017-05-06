@@ -1,9 +1,11 @@
 #!/bin/bash
 
-_filename="bash_aliases"
-_filepath="$CONFIGDIR/bin/bash/bash_aliases/bash_aliases"
+_filename="mac_os"
+_filepath="$CONFIGDIR/bin/mac_os/mac_os"
 _filelist="$CONFIGDIR/install_list"
-_destination="$WRITEDIR/bash_aliases"
+_destination="$WRITEDIR/$_filename"
+
+echo "installing mac_os aliases"
 
 grep "$_filename" "$_filelist" && cp -vn "$_filepath" "$_destination"
 

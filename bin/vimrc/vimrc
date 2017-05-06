@@ -1,3 +1,6 @@
+" I like being able to delete
+set backspace=2
+
 " colors
 set t_Co=256
 
@@ -10,7 +13,7 @@ set relativenumber
 set number
 
 set smartindent
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set wrap
@@ -41,14 +44,16 @@ set splitbelow
 set splitright
 
 " enable the mouse
-set ttyfast
-set mouse=a
+" set ttyfast 
+" set mouse=a
+" fuck the mouse
 
 " COLORS N SHIT
 "
 "
 " background
 hi normal cterm=NONE ctermbg=236 ctermfg=255
+"hi normal cterm=NONE ctermbg=235 ctermfg=157
 
 " Completion menu
 hi Pmenu ctermbg=238

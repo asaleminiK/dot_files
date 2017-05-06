@@ -13,10 +13,10 @@ umask 077
 # append to history instead of truncating
 shopt -s histappend
 # unlimited bash history
-HISTSIZE=-1
-HISTFILESIZE=-1
+HISTSIZE=
+HISTFILESIZE=
 # history control
 HISTCONTROL='ignoreboth'
 
 # expand path to include ~/bin
-export PATH="~/bin:$PATH"
+export PATH="/usr/local/bin:~/bin:$PATH"

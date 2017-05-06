@@ -14,7 +14,8 @@ fi
 
 find "$CONFIGDIR/bin" -name "install.sh" | while read file
 do
-	if grep $(basename "$(dirname "$file")") "$CONFIGDIR/install_list" 1>/dev/null
+	echo $file
+	if grep $(basename "$(dirname "$file")") "$CONFIGDIR/install_list"
 	then
 		echo "installing $(basename "$(dirname "$file")")"
 		. "$file"

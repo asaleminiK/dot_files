@@ -1,9 +1,9 @@
 #!/bin/bash
 
-_filename="bash_aliases"
-_filepath="$CONFIGDIR/bin/bash/bash_aliases/bash_aliases"
+_filename="tmux_sess"
+_filepath="$CONFIGDIR/bin/tmux/tmux_sess/tmux_sess"
 _filelist="$CONFIGDIR/install_list"
-_destination="$WRITEDIR/bash_aliases"
+_destination="$HOME/bin/tmux_sess"
 
 grep "$_filename" "$_filelist" && cp -vn "$_filepath" "$_destination"
 

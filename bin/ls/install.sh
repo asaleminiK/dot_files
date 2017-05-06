@@ -1,21 +1,31 @@
 #!/bin/bash
 
-[ -w $CREAMCHEESEDIR ] || exit
+_COLORS=true
 
-echo "installing ls_aliases"
-destination="$CREAMCHEESEDIR/ls_aliases"
-source_file="$BASEDIR/bin/bash/ls_aliases/ls_aliases"
+[ -w $BASEDIR ] || exit
+[ -w $CONFIGDIR ] || exit
+[ -w $WRITEDIR ] || exit
 
-echo '# aliases for LS ' > $destination
+_filename="ls_aliases"
+_filepath="$CONFIGDIR/bin/ls/$_filename"
+_filelist="$CONFIGDIR/install_list"
+_destination="$WRITEDIR/$_filename"
 
-if which gls &>/dev/null; then
-	if $NICECOLORS; then
-		echo "alias ls='gls --color=force'" >> $destination
+if [ -e $_destination ]; then
+	echo "$_destination already exists! aborting..."
+else
+
+	echo "installing ls_aliases"
+
+	if which gls &>/dev/null; then
+		if $_COLORS; then
+			echo "alias ls='gls --color=auto'" >> $_destination
+		else
+			echo "alias ls='gls'" >> $_destination
+		fi
 	else
-		echo "alias ls='gls'" >> $destination
+		echo "alias ls='ls --color=force'" >> $_destination
 	fi
-elif [ $P_OS = 'linux' ] && [ -n $p_LSCOLOR ]; then
-	echo "alias ls='ls --color=force'" >> $destination
-fi
 
-cat $source_file >> $destination
+	cat $_filepath >> $_destination
+fi

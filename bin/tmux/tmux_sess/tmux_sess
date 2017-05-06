@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="p_tmuxsess"
+NAME="Main_sess"
 CONFIGDIR='~'
 WORKDIR='~'
 FUNDIR='~'
@@ -30,7 +30,7 @@ if ! tmux has-session -t $NAME &>/dev/null; then
 	tmux new-window -n "CS" -t $NAME
 	tmux send-keys -t $NAME:3 "cd $p_CSDIR" C-m
 
-	tmux new-window -n "Fun" -t $NAME
+	tmux new-window -n "Misc" -t $NAME
 	tmux send-keys -t $NAME:4 "cd $p_FUNDIR" C-m
 
 	if [ -n $p_TMPDIR ]; then
@@ -38,8 +38,7 @@ if ! tmux has-session -t $NAME &>/dev/null; then
 		tmux send-keys -t $NAME:5 "cd $p_TMPDIR" C-m
 	fi
 
-	tmux new-window -n "cmus" -t $NAME
-	tmux send-keys -t $NAME:6 "cmus" C-m
+	tmux new-window -n "QEMU" -t $NAME
 
 #	tmux new-window -n "IRC" -t $NAME 
 

@@ -1,7 +1,7 @@
 import os
 
 # options: "dark" or "light"
-COLORSCHEME = "dark"
+COLORSCHEME = "light"
 
 # tmux shit
 

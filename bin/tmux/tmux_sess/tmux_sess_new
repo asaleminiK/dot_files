@@ -1,0 +1,33 @@
+#!/bin/bash
+
+NAME='main'
+# CONFIGDIR='~'
+
+# gets some stuff
+CONFIGFILE='~/.tmux_sess_conf'
+
+if ! tmux has-session -t $NAME &>/dev/null; then
+    # creates new session with one window called "Main"
+    tmux new-session -s $NAME -n "Main" -d
+    # types "cd ~ <RETURN>" 
+    tmux send-keys -t $NAME:0 "cd ~" C-m
+
+    if source $CONFIGFILE &>/dev/null; then
+        if [ -n $WINLIST ]; then
+            i=1
+            for s in ${WINLIST[@]}; do
+                # oh shut up
+                if [ -n $s ]; then
+                    nam=$(sed -e 's/\(.*\);.*/\1/' <<< $s)
+                    dir=$(sed -e 's/.*;\(.*\)/\1/' <<< $s)
+
+                    tmux new-window -n $nam -t $NAME
+                    tmux send-keys -t $NAME:$i "cd $dir" C-m
+
+                    i=$(( i+1 ))
+                fi
+            done
+        fi
+fi
+
+tmux attach -t $NAME

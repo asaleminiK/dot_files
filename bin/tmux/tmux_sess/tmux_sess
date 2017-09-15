@@ -18,6 +18,8 @@ if [ -z $CSDIR ]; then
 fi
 
 if ! tmux has-session -t $NAME &>/dev/null; then
+
+# TODO: read an array 
 	tmux new-session -s $NAME -n "Main" -d
 	tmux send-keys -t $NAME:0 "cd ~" C-m
 
@@ -34,11 +36,13 @@ if ! tmux has-session -t $NAME &>/dev/null; then
 	tmux send-keys -t $NAME:4 "cd $p_FUNDIR" C-m
 
 	if [ -n $p_TMPDIR ]; then
-		tmux new-window -n "scratchpad" -t $NAME
+		tmux new-window -n "Scratchpad" -t $NAME
 		tmux send-keys -t $NAME:5 "cd $p_TMPDIR" C-m
 	fi
 
-	tmux new-window -n "QEMU" -t $NAME
+	tmux new-window -n "Generic Python Shell" -t $NAME
+
+	tmux new-window -n "Things I leave running " -t $NAME
 
 #	tmux new-window -n "IRC" -t $NAME 
 

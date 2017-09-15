@@ -19,4 +19,4 @@ HISTFILESIZE=
 HISTCONTROL='ignoreboth'
 
 # expand path to include ~/bin
-export PATH="/usr/local/bin:~/bin:$PATH"
+export PATH="~/anaconda3/bin:/usr/local/bin:~/bin:$PATH"
